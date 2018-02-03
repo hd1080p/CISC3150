@@ -1,0 +1,6 @@
+Area of this circle with radius 10.000 has area 986.960
+Area of this circle with radius 20.000 has area 3947.842
+Area of this circle with radius 5.500 has area 298.556
+Area of this circle with radius 8.000 has area 631.655
+Area of this circle with radius 67.000 has area 44304.654
+Area of this circle with radius 100.000 has area 98696.044

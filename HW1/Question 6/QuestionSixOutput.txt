@@ -1,0 +1,8 @@
+Enter center coordinates for circle one: Enter center coordinates for circle two: Enter the radius for circle one: Enter the radius for circle two: 
+The two circles do not intersect.
+Enter center coordinates for circle one: Enter center coordinates for circle two: Enter the radius for circle one: Enter the radius for circle two: 
+The two circles are overlapping eachother
+Enter center coordinates for circle one: Enter center coordinates for circle two: Enter the radius for circle one: Enter the radius for circle two: 
+The two circles are touching eachother
+Enter center coordinates for circle one: Enter center coordinates for circle two: Enter the radius for circle one: Enter the radius for circle two: 
+The two circles are within eachother

@@ -1,0 +1,12 @@
+The number generated is: 10, and the month is: October
+The number generated is: 3, and the month is: March
+The number generated is: 1, and the month is: January
+The number generated is: 2, and the month is: February
+The number generated is: 4, and the month is: April
+The number generated is: 7, and the month is: July
+The number generated is: 5, and the month is: May
+The number generated is: 4, and the month is: April
+The number generated is: 10, and the month is: October
+The number generated is: 11, and the month is: November
+The number generated is: 12, and the month is: December
+The number generated is: 10, and the month is: October
