@@ -1,0 +1,9 @@
+Enter a String to check if it's a palindrome: The reversed String is: madamimadam
+The inputString: madamimadam is a Palindrome
+
+Enter a String to check if it's a palindrome: The reversed String is: 11010101010101001
+The inputString: 10010101010101011 is not a Palindrome
+
+Enter a String to check if it's a palindrome: The reversed String is: fOoF
+The inputString: FoOf is a Palindrome
+
