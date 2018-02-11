@@ -32,7 +32,9 @@ public class QuestionOne{
 
         for(int row = 0; row < userNumber; row++){
             String format = "%" + (2*(userNumber-row)) + "s" + " %d\n";
-            System.out.printf(format, " ", (row + 1));
+            for(int listOfNumbers = row; listOfNumbers < (row + 1); listOfNumbers++){
+                System.out.printf(format, " ", (listOfNumbers + 1));
+            }
         }
 
 
