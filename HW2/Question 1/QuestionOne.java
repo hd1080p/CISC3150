@@ -7,6 +7,7 @@
  *
  * Creating a properly formatted pyramid, looking at the example given in the
  * problem the number of spaces per row goes as follows:
+ *      for userInput = 4
  *      Row 0: 8 spaces
  *      Row 1: 6 spaces
  *      Row 2: 4 spaces
@@ -15,10 +16,10 @@
  * number of spaces per row to create a properly formatted pyramid is:
  *      denote:
  *          s = # of spaces
- *          r = Row #
- *          n = userInput
+ *          row = Row #
+ *          userNumber = userInput
  *      formula:
- *          s = 2(n-r)
+ *          s = 2(userNumber-row)
  */
 
 import java.util.Scanner;
@@ -31,12 +32,16 @@ public class QuestionOne{
         int userNumber = userInput.nextInt();
 
         for(int row = 0; row < userNumber; row++){
-            String format = "%" + (2*(userNumber-row)) + "s" + " %d\n";
-            for(int listOfNumbers = row; listOfNumbers < (row + 1); listOfNumbers++){
-                System.out.printf(format, " ", (listOfNumbers + 1));
-            }
+            String printSpaces = "%" + (2*(userNumber-row)) + "s";
+            System.out.printf(printSpaces, " ");
+
+            for(int incNumber = 1; incNumber <= (row + 1); incNumber++)
+                System.out.printf("%d ", incNumber);
+
+            for(int decNumber = row; decNumber >= 1; decNumber--)
+                System.out.printf("%d ", decNumber);
+
+            System.out.printf("\n");
         }
-
-
     }
 }
