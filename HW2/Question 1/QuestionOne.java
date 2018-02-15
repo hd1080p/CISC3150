@@ -30,7 +30,7 @@ public class QuestionOne{
 
         System.out.printf("Enter how tall of a pyramid you would like to see: ");
         int userNumber = userInput.nextInt();
-
+        System.out.printf("\n");
         for(int row = 0; row < userNumber; row++){
             String printSpaces = "%" + (2*(userNumber-row)) + "s";
             System.out.printf(printSpaces, " ");

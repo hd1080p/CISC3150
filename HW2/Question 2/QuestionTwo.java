@@ -19,6 +19,10 @@
  *
  *  Month affected by leap year:
  *      February (29 days if leap year, otherwise 28 days)
+ *
+ * I created an Auxillary class called Calendar in the package 'questiontwo' to
+ * handle all the logic and printing the calendar. More information on what
+ * encapsulated is in Calendar.java
  */
 
 import java.util.Scanner;
@@ -34,15 +38,11 @@ public class QuestionTwo{
         System.out.printf("Enter the day in which the first of January fell on: ");
         String inputDay = userInput.next();
 
-        Calendar testCalendar = new Calendar(inputYear);
+        Calendar testCalendar = new Calendar(inputYear, inputDay);
 
-        System.out.printf("Is the year %d a leap year? %b\n", inputYear, testCalendar.isLeapYear(inputYear));
+        System.out.printf("Is the year %d a leap year? %b\n\n", inputYear, testCalendar.isLeapYear(inputYear));
 
-        /*for(String month : testCalendar.getMonthsAndDays().keySet()){
-            System.out.printf("Month: %s \nNumber of days in the month: %d\n", month, testCalendar.getMonthsAndDays().get(month));
-        }*/
-
-        testCalendar.printFormat();
+        testCalendar.printCalendarForTheYear();
 
     }
 }

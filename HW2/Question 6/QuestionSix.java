@@ -13,6 +13,7 @@ public class QuestionSix{
     public static void main(String[] args){
         Scanner userInput = new Scanner(System.in);
         userInput.useDelimiter("");
+        System.out.println("Enter a sample word/phrase to test character delimiter");
         while(userInput.hasNext())
             System.out.println(userInput.next());
     }
