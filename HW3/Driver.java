@@ -44,8 +44,12 @@ public class Driver{
         System.out.println("Testing toUpperCase() method");
         System.out.println(testTwo.toUpperCase());
 
-        System.out.println("Testing compareTo");
+        System.out.println("Testing compareTo()");
         System.out.println(test.compareTo(testTwo));
         System.out.println(test.compareTo(testThree));
+
+        System.out.println("Testing valueOf()");
+        System.out.println(MyString.valueOf(5));
+        System.out.println(MyString.valueOf(39999));
     }
 }

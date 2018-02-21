@@ -34,7 +34,14 @@
  *
  * The link to the table of the ASCII characters that I use for reference can
  * be found here: http://www.asciitable.com/
- * 
+ *
+ * for valueOf(int i) I looked in the Integer class and I found a toString()
+ * method that returns the String representation of the Integer (not sure if
+ * you wanted to implement my own logic for converting a current integer to a
+ * char and then to a String)?
+ *
+ * For reference here's a link to the Integer class:
+ * https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html
  */
 
 package mystring;
@@ -49,6 +56,9 @@ public class MyString{
     }
 
     public char charAt(int index){
+        //Probably redundant since if I am trying to access an out of bounds
+        //index in copy.arr it will throw it automatically, but just there for
+        //good practice.
         if(index < 0 || index > this.length)
             throw new ArrayIndexOutOfBoundsException();
         MyString copy = this;
@@ -126,10 +136,7 @@ public class MyString{
         return 0;
     }
 
-
-    /*        MyString copy = this;
     public static String valueOf(int i){
-
+        return Integer.toString(i);
     }
-*/
 }
