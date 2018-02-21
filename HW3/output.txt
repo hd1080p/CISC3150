@@ -1,0 +1,18 @@
+Length of MyString is: 7
+CharAt test: I
+Printing String
+TeStInG
+Printing Substring
+TeS
+Testing toString() method
+TeStInG
+Testing toLowerCase() method
+testing
+Testing toUpperCase() method
+ABCDEFG
+Testing compareTo()
+-1
+0
+Testing valueOf()
+5
+39999
