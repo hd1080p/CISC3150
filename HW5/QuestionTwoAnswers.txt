@@ -1,0 +1,123 @@
+Harris Dizdarevic
+CISC. 3150
+Homework 5
+Answers to Question 2
+
+1a) Consider the call:
+
+Dog d = new Dog();
+System.out.println(d.call(3));
+
+Answer:
+  This method call will print: "Woof, woof, woof!"
+  When considering the statement Dog d = new Dog();, at compile time,
+  the compiler recognizes that the type of the identifier will be Dog, and
+  at runtime, the identifier's actual type is Dog as well and calls the
+  call(int k) method in the class Dog.
+
+--
+1b) Consider the call:
+
+Object c = new Cat();
+System.out.println(c);
+
+Answer:
+  This will print "I'm a cat, go away!".
+
+  At compile time the identifier 'c' will be realized as of type Object
+  and inherently the Object class has a method toString() which prints out
+  the Objects reference code (usually) however it prints "I'm a cat, go away!"
+  because that method is overriden in the Cat class, so at runtime it runs
+  the Cat class' toString() method instead of Object's toString() method.
+--
+1c) Consider the call:
+
+Object v = new Pet();
+System.out.println(v.call());
+
+Answer:
+  This will not make the program not compile/run.
+
+  As pointed out in question 1b, the realized type by the compiler is of
+  type Object however, Object does not have a method named call(). That
+  is only defined within the class Pet.
+--
+1d) Consider the call:
+
+Pet p = new Pet();
+System.out.println(p);
+
+Answer:
+  This will print out: "Pet@7852e922"
+
+  The difference between this and question 1b is that in the class Pet,
+  it did not override the toString() method in Object. Because every
+  class created derives from Object, Pet inherits the default toString()
+  method from Object.
+--
+1e) Consider the call:
+
+Pet q = new Dog();
+System.out.println(q.call());
+
+Answer:
+  This will print: "woof!"
+
+  At compile time the program recognizes the identifier as type Pet which
+  contains the method call() but at runtime the actual type is Dog so it
+  calls the call() method in class Dog. This is an example of polymorphism
+
+
+1f) Consider the call:
+
+Cat t = new Cat();
+System.out.println(t.toString("Come here, kitty"));
+
+Answer:
+  This will print out: "Come here, kitty? ... Don't waste my time"
+
+  This specifically calls the method toString() method in class Cat.
+  The realized and actual type is of both type Cat.
+
+--
+1g) Consider the call:
+
+Cat u = new Cat();
+System.out.println(u.call(3));
+
+Answer:
+  This wouldn't compile.
+
+  Because Cat extends from class Pet, it does not inherit Dog's
+  call(int k) method. If I were to visual the inheritance tree it
+  would look like:
+      Pet
+      / \
+    Dog Cat
+
+  Pet doesn't contain a call(int k) method either, so there is no such
+  method that exists for class Cat.
+--
+1h) Consider the call:
+
+Dog e = new Dog();
+System.out.println(e.feet());
+
+Answer:
+  This will print "four"
+
+  Looking at the inheritance tree in (1g), all the available methods in
+  class Pet is passed down to the child, Dog; therefore, the method
+  feet() is available to Dog as well.
+--
+1i) Consider the call:
+
+Pet r = new Dog();
+System.out.println(r.call(3))
+
+Answer:
+  This would not compile.
+
+  Due to the realized type at compile time is of type Pet, it does not
+  contain a method call(int k) as it would in class Dog; therefore, it
+  cannot be applied to class Pet.
