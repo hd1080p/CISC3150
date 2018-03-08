@@ -40,7 +40,8 @@ public class QuestionOne{
         double min = 0;
         double max = radius;
         double dotsThatFallInCircle = 0;
-        for(long counter = 1; counter < 4000000000L; counter++) {
+        long counter;
+        for(counter = 1; counter < 4000000000L; counter++) {
             double Sx = Math.random() * max;
             double Sy = Math.random() * max;
             //System.out.println("X " + Sx + " Y " + Sy );
@@ -48,8 +49,8 @@ public class QuestionOne{
             if(((Sx*Sx) + (Sy*Sy)) <= (radius*radius)) {
                 dotsThatFallInCircle += 1;
             }
-           System.out.println(dotsThatFallInCircle/counter);
        }
+       System.out.println(4.00 * (dotsThatFallInCircle/counter));
 
         System.out.println(System.currentTimeMillis()-before);
     }
