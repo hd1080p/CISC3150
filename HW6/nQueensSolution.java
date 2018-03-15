@@ -59,7 +59,7 @@ class Solver {
     }
 
     public void nQueensSolver(int[][] chessBoard, int currColumn) {
-        if(currColumn == chessBoard.length) {  //the length of the board is equal to the number of columns
+        if(currColumn == chessBoard.length) {  //Because of the N Queens Problem N is coupled with the board meaning if n = 8 then the board is 8x8.
             this.solutions += 1;
             printBoard(chessBoard);
             printNumSolutions();
