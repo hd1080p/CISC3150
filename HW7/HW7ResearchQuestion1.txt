@@ -1,0 +1,46 @@
+Harris Dizdarevic
+CISC. 3150
+Homework 7 - Research Question 1
+
+1) In our class we saw that the java compiler seems to consider the actual
+type of an exception instead of just the declared type. Here's the code:
+
+class blah{
+	public void someMethod(){
+		try{
+			throw new NullPointerException();
+		}
+		catch(Throwable t){
+			System.out.println("Caught!");
+			throw t;
+		}
+	}
+}
+
+You'd think that this class wouldn't compile, because t is declared to be
+Throwable and that's a checked exception, but the code compiles just fine
+because the actual type of t is an unchecked exception. On the other hand,
+if you were to throw a checked exception in the try block, the code will
+fail to compile because 't' is now a checked exception that you failed to
+declare in your method. Find out why this happens. Make sure that you
+provide sources.
+
+-------------------------------------------------------------------------
+
+Sources:
+https://stuartmarks.wordpress.com/2011/07/21/a-new-java-exception-handling-idiom/
+
+https://www.theserverside.com/tutorial/OCPJP-Use-more-precise-rethrow-in-exceptions-Objective-Java-7
+
+https://docs.oracle.com/javase/8/docs/technotes/guides/language/catch-multiple.html
+
+http://fahdshariff.blogspot.com/2011/07/java-7-precise-rethrow.html
+
+https://conferences.oreilly.com/oscon/oscon2011/public/schedule/detail/20049
+
+Explanation:
+Ever Since Java 7, they have introduced a 'More precise Rethrow' mechanism.
+This works with any caught exception, the JVM infers the exception caught and then rethrows.
+
+The JVM looks for what may be the most specific Exception thrown underneath the exception being rethrown.
+In the example above, if you throw an exception under Exception, and catch it as an Exception then rethrow it, the same behavior will occur

@@ -1,0 +1,42 @@
+Harris Dizdarevic
+CISC. 3150
+Homework 7 - Research Question 2
+
+Research why you're able to call the default implementation of a method in
+an interface with some weird syntax. Here's the code:
+
+public class blah{
+	public static void main(String[] args){
+		A a = new A();
+		a.someMethod();
+	}
+}
+
+interface myinterface{
+	default public void sayHello(){
+		System.out.println("Hello");
+	}
+}
+
+class A implements myinterface{
+	public void someMethod(){
+		myinterface.super.sayHello();
+	}
+}
+
+---------------------------------
+
+Sources:
+https://zeroturnaround.com/rebellabs/java-8-explained-default-methods/
+
+https://stackoverflow.com/questions/18286235/what-is-the-default-implementation-of-method-defined-in-an-interface
+
+https://stackoverflow.com/questions/39247984/what-is-interface-super
+
+Rationale:
+Within Java, you only extend from one class, in other words single inheritance.
+However, with interfaces, a single class can implement many interfaces therefore there is a multiple inheritance tree.
+
+To call a specific invocation of a method in an interface (let's say you try to override, or create a method in a class with the same name),
+Calling super in this sense is a keyword referring to the interface rather than the parent class. Default methods are also concrete methods rather than abstract.
+
