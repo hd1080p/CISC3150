@@ -1,0 +1,40 @@
+Harris Dizdarevic
+CISC. 3150
+HW9 - Research Questions
+
+In our class we went over the code posted at:
+https://pastebin.com/dwZqBs4u
+But we ran into a bunch of problems.
+
+First, we were unable to instantiate the Object class. Explain that.
+
+Second, we saw that with the notifyAll() uncommented, and the keyword
+synchonized removed from the method declarations, the program just died
+without throwing any exceptions. Given that we are working with an
+infinite loop here, that shouldn't have happened. Explain that.
+
+At home, I was playing around with this code, and I noticed that if you
+wrap notifyAll() in a try/catch block, you'll notice that
+IllegalMonitorStateException is being thrown. The reason why you don't get
+to see it is because it is a child of RuntimeException. Figure out how
+you'd fix it. Research how to have two threads share an object's monitor &
+fix the code.
+---
+Question 1: Unable to instantiate the Object class
+
+It might be one of two things, the first possible cause can be the path to the Object class in the java directory is corrupted.
+The second can be that it is being ambiguous in what Object class you are trying to instantiate. Looking at the error, ./Object.java means that it is
+looking in the current directory for the Object class, and not looking towards java.lang's Object. The current directory wouldn't contain Object.java
+which is why it is throwing the error. Simplest way to fix this would be to reinstall java and let the linking fix itself or explicitly import java.lang.Object
+
+adapted source: https://stackoverflow.com/questions/24831183/java-error-bad-source-file-file-does-not-contain-class-x-please-remove-or-m
+--
+Question 2: Program throwing IllegalMonitorStateException
+
+In the java documentation for the method notifyAll(), it wakes up all threads on the current object's monitor. In that sense, an object can serve as
+its own monitor, and the functionality of a monitor is to allow concurrent thread execution. Essentially what happens is a race condition that java
+implicitly catches where two threads are accessing the same resource and doesn't know which thread would go first since they're both contending for the
+same object. Hence why the synchronized block is necessary due to the nature of mutual exclusion.
+
+source: https://stackoverflow.com/questions/9848616/whats-the-meaning-of-an-objects-monitor-in-java-why-use-this-word
+        http://javarevisited.blogspot.com/2011/05/wait-notify-and-notifyall-in-java.html
